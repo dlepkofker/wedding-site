@@ -4,7 +4,6 @@ import { getTitlePhrase } from '../../properties/weddinginfo';
 
 function HeadingCard() {
     
-    console.log('alreadyhere');
     return (
         <Heading>
             {getTitlePhrase()}

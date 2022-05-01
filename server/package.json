@@ -1,4 +1,13 @@
 {
+  "name": "wedding-site-api",
+  "version": "1.0.0",
+  "description": "wedding site data served by node",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "webpack",
+    "dev": "nodemon ./server.js localhost 3080"
+  },
   "dependencies": {
     "express": "^4.17.3",
     "node-fetch": "^3.2.0"

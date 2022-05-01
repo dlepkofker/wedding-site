@@ -6,16 +6,16 @@ const log = require('fancy-log');
 var exec = require('child_process').exec;
 
 const paths = {
-  prod_build: './prod-build',
+  prod_build: './build',
   server_file_name: 'server.bundle.js',
   react_src: './client/build/**/*',
-  react_dist: './prod-build/client/build',
+  react_dist: './build/client/build',
   zipped_file_name: 'wedding-site.zip'
 };
 
 function clean()  {
   log('removing the old files in the directory')
-  return del('./prod-build/**', {force:true});
+  return del('./build/**', {force:true});
 }
 
 function createProdBuildFolder() {

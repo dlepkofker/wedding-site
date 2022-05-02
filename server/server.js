@@ -6,10 +6,6 @@ const port = 8080;
 
 app.use(express.static(path.join(__dirname, '/client/build')));
 
-app.get('/', (req,res) => {
-  res.sendFile(path.join(__dirname, '/client/build/index.html'));
-});
-
 app.get('/ping', (req, res) => {
   res.send('pong');
 });
@@ -26,6 +22,20 @@ app.get('/api/guest/:guestId', (req, res) => {
 
 app.get('/api/wedding/info', (req, res) => {
     res.sendFile('./wedding.json', { root: __dirname });
+});
+
+app.get('/savethedate', (req,res) => {
+  res.sendFile(path.join(__dirname, '/client/build/savethedate.html'));
+});
+
+app.get('/', (req,res) => {
+  // res.sendFile(path.join(__dirname, '/client/build/index.html'));
+  res.send('<h1>Coming Soon!</h1>');
+});
+
+app.get('/*', (req,res) => {
+  // res.sendFile(path.join(__dirname, '/client/build/index.html'));
+  res.send('<h1>Coming Soon!</h1>');
 });
 
 app.listen(port, () => {
